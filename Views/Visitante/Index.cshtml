@@ -1,0 +1,94 @@
+﻿@using VisitantesApp.ViewModels
+@model AgregarVisitanteViewModel
+
+ <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Agregar Visitante</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+ <form method="POST" asp-action="CrearVisitante">
+  <div class="form-group">     
+    
+    <label asp-for="Nombre">Nombre</label>
+    <input asp-for="Nombre" class="form-control" placeholder="Ingresar Nombre">  
+    <span asp-validation-for="Nombre" class="text-danger"></span>
+  </div> 
+  <div class="form-group">
+    <label asp-for="Apellido">Apellido</label>
+    <input asp-for="Apellido" class="form-control" placeholder="Ingresar Apellido">  
+    <span asp-validation-for="Apellido" class="text-danger"></span>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+            </div>
+        </div>
+    </div>
+
+@{
+    ViewData["Title"] = "Display Data";
+    string[] tableHeaders = new string[]
+
+            {
+        "Id",
+        "Nombre",
+        "Apellido",
+        "FechaUltimoEvento"
+
+
+
+
+
+
+            };
+}
+    <form method="GET" asp-action="">
+    <div>
+        <table class="table" table-bodered table-hover >
+  <thead>
+    <tr>
+                    @{
+
+                        foreach (var head in tableHeaders)
+
+                        {
+                        
+                          <th>
+                                @head
+                          </th>
+                        }
+
+                        
+                    }
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>
+
+
+        </td>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    </form>
